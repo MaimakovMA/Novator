@@ -63,9 +63,9 @@ const user = {
     isAdmin: 'MA',    
 }
 user ['city of residence']='город'
-age = 30
+user.age = 30
 delete user ['city of residence']
-let info = prompt ('Какую информацию хотите узнать о пользователе?')
+const info = prompt ('Какую информацию хотите узнать о пользователе?')
 alert ( user [info] )
 
 
