@@ -21,7 +21,7 @@ while (i < 6) {
 let j = 7;
 
 while (j < 23) {
-    console.log(i);
+    console.log(j);
     j++
 }
 
