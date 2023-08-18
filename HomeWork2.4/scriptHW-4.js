@@ -1,10 +1,10 @@
 // Задание 1
 
-let Hello = 0;
+let hello = 0;
 
-while ( Hello < 2 ) {
+while ( hello < 2 ) {
     console.log("Привет!");
-    Hello++;    
+    hello++;    
 }
 
 // Задание 2
@@ -18,11 +18,11 @@ while (i < 6) {
 
 // Задание 3
 
-let j = 7;
+let number = 7;
 
-while (j < 23) {
-    console.log(j);
-    j++
+while (number < 23) {
+    console.log(number);
+    number++
 }
 
 
