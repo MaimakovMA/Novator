@@ -188,6 +188,7 @@ a {
 
 .season__block {
   padding-bottom: 234px;
+  padding-top: 234px;
   display: flex;
   justify-content: space-between;
 }
@@ -216,5 +217,32 @@ a {
   /* Game */
   .game {
     grid-template-columns: repeat(4, 1fr);
+  }
+  /* Seasons */
+  .season__block {
+    padding-bottom: 85px;
+    padding-top: 51px;
+    flex-wrap: wrap;
+  }
+  .seasons__block_left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .seasons__title {
+    text-align: center;
+    font-size: 32px;
+  }
+  .seasons__text {
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .seasons__button {
+    margin-bottom: 64px;
+  }
+  .seasons__img {
+    max-width: 344px;
+    min-height: 236px;
   }
 }/*# sourceMappingURL=stale.css.map */
