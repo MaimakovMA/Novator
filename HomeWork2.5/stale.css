@@ -63,6 +63,7 @@ a {
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
+  border: none;
   line-height: normal;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
@@ -170,6 +171,7 @@ a {
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
+  border: none;
   cursor: pointer;
   line-height: normal;
   transition: color 0.3s ease-in-out;
@@ -177,16 +179,7 @@ a {
 .seasons__button:hover {
   background: #EB443F;
 }
-.seasons__button_link {
-  color: #FFF;
-  font-family: Montserrat;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.season__block {
+.seasons .season__block {
   padding-bottom: 234px;
   padding-top: 234px;
   display: flex;
@@ -244,5 +237,11 @@ a {
   .seasons__img {
     max-width: 344px;
     min-height: 236px;
+  }
+}
+@media (max-width: 1024px) {
+  .center {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }/*# sourceMappingURL=stale.css.map */

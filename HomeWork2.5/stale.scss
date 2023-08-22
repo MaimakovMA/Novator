@@ -65,6 +65,7 @@
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
+    border: none;
     line-height: normal;
     cursor: pointer;
     transition: color 0.3s ease-in-out;
@@ -177,6 +178,7 @@
       font-size: 18px;
       font-style: normal;
       font-weight: 400;
+      border: none;
       cursor: pointer;
       line-height: normal;
       transition: color 0.3s ease-in-out;
@@ -185,19 +187,7 @@
     &__button:hover {
       background: #EB443F;
     }
-
-    &__button_link {
-      color: #FFF;
-      font-family: Montserrat;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-    }
-  }
   
-  
-
   .season__block {
     padding-bottom: 234px;
     padding-top: 234px;
@@ -205,8 +195,10 @@
     justify-content: space-between;
   }
 
-
+}
 
 
 
   @import 'mobile';
+  @import 'tablet'
+  
