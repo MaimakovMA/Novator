@@ -38,16 +38,14 @@ console.log(num3);
 // Задание 4
 // С помощью вложенных циклов создайте многомерный массив вида: [[1, 1, 1], [1, 1, 1], [1, 1, 1]].
 
-let arr = [
-    [1, 1, 1],
-    [1, 1, 1],
-    [1, 1, 1],
-];
-for (let arrIn of arr) {
-    for (let item of arrIn) {
-    console.log(item);
+let arr = [];
+for (let x = 0; x <3; x++) {
+        arr[x] = [];
+    for (let y = 0; y <3; y++) {
+        arr[x][y] = 1;
     }
 }
+console.log(arr);
 
 // Задание 5
 // Дан массив: [1, 1, 1]. Добавьте в конец массива значения 2, 2, 2.
@@ -128,8 +126,8 @@ for (let i = 0; i < num10.length -1; i++) {
 // для решения задачи используйте map()
 
 const num11 = [2, 5, 3, 7, 4, 6];
-const array = num11.map((item) => item * 2);
-console.log(num11)
+const array = num11.map((item) => item ** 2);
+console.log(array)
 
 // Или
 
