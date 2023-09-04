@@ -135,7 +135,7 @@ console.log(array)
 // const squareNum = (arr) => {
 //     return arr.map((el) => el ** 2);
 // }
-// console.log(num11);
+// console.log(squareNum(num11));
 
 
 // Задание 12
