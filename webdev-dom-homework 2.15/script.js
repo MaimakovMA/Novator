@@ -32,7 +32,7 @@ const loaderFormElement = document.querySelector('.loader_form');
      };
 
    return `${day}.${month}.${date.getFullYear() - 2000} ${date.getHours()}:${minutes}`;
- }; 
+ };
 
 
 //  Создаем массив данных данных с комментариями
@@ -84,8 +84,7 @@ const loaderFormElement = document.querySelector('.loader_form');
        renderList({ commentsArray });
      });
    }
-  };
-  likeListeners();
+ };
 
  // Функция ответа на комментарий
  const answerComment = () => {
@@ -100,7 +99,6 @@ const loaderFormElement = document.querySelector('.loader_form');
        })
      }
  };
- answerComment();
 
  // Функия для закрашивания лайка в зависимости от значения activeLike
  const activeLike = (comment) => {
@@ -173,9 +171,8 @@ const loaderFormElement = document.querySelector('.loader_form');
    lastList.remove();
  }); 
 
- 
  fetchPromise();
- renderList({ commentsArray });
+ renderList(commentsArray);
 
  // Код писать здесь!
  console.log("It works!");

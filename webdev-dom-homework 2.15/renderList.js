@@ -24,5 +24,7 @@ export const renderList = ({ commentsArray }) => {
     }).join('');
  
     commentsElement.innerHTML = commentsHtml; 
-    
+    likeListeners();
+    answerComment();
   };
+  
