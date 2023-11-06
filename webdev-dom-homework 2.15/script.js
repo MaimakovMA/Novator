@@ -173,6 +173,7 @@ const loaderFormElement = document.querySelector('.loader_form');
 
  fetchPromise();
  renderList(commentsArray);
+ 
 
  // Код писать здесь!
  console.log("It works!");
