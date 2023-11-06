@@ -32,8 +32,7 @@ const loaderFormElement = document.querySelector('.loader_form');
      };
 
    return `${day}.${month}.${date.getFullYear() - 2000} ${date.getHours()}:${minutes}`;
- };
- 
+ }; 
 
 
 //  Создаем массив данных данных с комментариями
