@@ -1,7 +1,10 @@
+import { activeLike, dateFormat } from "./helper.js";
+import { answerComment, likeListeners } from "./listeners.js";
 
 const commentsElement = document.querySelector(".comments");
 
 export const renderList = ({ commentsArray }) => {
+  
     const commentsHtml = commentsArray.map((comment, index) => {
  
       return `<li class="comment">
@@ -24,7 +27,9 @@ export const renderList = ({ commentsArray }) => {
     }).join('');
  
     commentsElement.innerHTML = commentsHtml; 
+   
     likeListeners();
     answerComment();
   };
   
+    

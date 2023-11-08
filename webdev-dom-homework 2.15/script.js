@@ -2,6 +2,7 @@ import { getTodos, postTodo } from "./api.js";
 import { renderList } from "./renderList.js";
 
 
+
 // "use strict";
 
 const formInputElement = document.querySelector(".add-form");
@@ -11,37 +12,13 @@ const buttonInputElement = document.querySelector(".add-form-button");
 const loaderListElement = document.querySelector('.loader_list');
 const loaderFormElement = document.querySelector('.loader_form');
 
-
- // Получили дату
- 
- function dateFormat(date) {
-   
-   let month = date.getMonth() + 1 ;
-     if (month < 10) {
-       month = "0" + month
-     };
-
-   let minutes = date.getMinutes()
-   if (minutes < 10) {
-       minutes = "0" + minutes
-     };
-
-     let day = date.getDate()
-   if (day < 10) {
-       day = "0" + day
-     };
-
-   return `${day}.${month}.${date.getFullYear() - 2000} ${date.getHours()}:${minutes}`;
- };
-
-
 //  Создаем массив данных данных с комментариями
 
  let commentsArray = [];
 
  // Запрос API
  loaderListElement.textContent = "Подождите, загружаю комментарии...";
- const fetchPromise = () => {
+ export const fetchPromise = () => {
    
  // С помощью метода then мы подписываемся на ответ сервера
 
@@ -50,7 +27,7 @@ const loaderFormElement = document.querySelector('.loader_form');
  getTodos().then ((response) => {
    loaderListElement.textContent = "";  
    commentsArray = response.comments
-   renderList();   
+   renderList({commentsArray});   
  })
  
  .catch((error) => {
@@ -66,46 +43,6 @@ const loaderFormElement = document.querySelector('.loader_form');
 
  };  
  
- // Функция при нажатии на лайк
-
- const likeListeners = () => {
-   const likeElements = document.querySelectorAll(".like-button");
-   for (let like of likeElements) {
-     like.addEventListener("click", (event) => {
-       event.stopPropagation();
-       const index = like.dataset.index;
-       if (commentsArray[index].isLiked === false) {
-         commentsArray[index].isLiked = true;
-         commentsArray[index].likes++;
-       } else {
-         commentsArray[index].isLiked = false;
-         commentsArray[index].likes--;
-       }
-       renderList({ commentsArray });
-     });
-   }
- };
-
- // Функция ответа на комментарий
- const answerComment = () => {
-     const commentTextElement = document.querySelectorAll('.comment-text');
-     const commentNameElement = document.querySelectorAll('.comment-name');
-     for (const comment of commentTextElement) {
-       comment.addEventListener("click", () => {
-         const index = comment.dataset.index;
-
-         commentInputElement.value = 
-         `>${commentTextElement[index].innerHTML} ${commentNameElement[index].innerHTML}`;
-       })
-     }
- };
-
- // Функия для закрашивания лайка в зависимости от значения activeLike
- const activeLike = (comment) => {
-     if (comment.isLiked === true) {
-       return '-active-like'
-     } 
- };
 
 // Создем рендер списка на основе массива 
 // Переместил в renderList.js
@@ -172,8 +109,8 @@ const loaderFormElement = document.querySelector('.loader_form');
  }); 
 
  fetchPromise();
- renderList(commentsArray);
- 
+//  renderList({commentsArray});
+
 
  // Код писать здесь!
  console.log("It works!");

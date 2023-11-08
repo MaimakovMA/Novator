@@ -1,3 +1,5 @@
+import { fetchPromise } from "./script.js";
+
 export function getTodos() {
     return fetch("https://wedev-api.sky.pro/api/v1/mikhail-maimakov/comments", {
    method: "GET"
