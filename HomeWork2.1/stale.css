@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, select, input {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
+/* Header */
+
+.header {
+  background-image: url(./img/Header.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 1024px;
+}
+
+.header__title {  
+  padding-top: 217px;
+  margin-bottom: 32px;
+  font-family: Montserrat;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: #FFF;
+}
+
+.header__text {
+  max-width: 481px;
+  margin-bottom: 44px;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 32px;
+  color: #FFFFFF;
+}
+
+.header__button {
+  padding: 13px 74px 13px 74px;
+  border-radius: 30px;
+  background: #9C0332;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.header__button:hover {
+  background: #EB443F;
+}
+
+/* Game */
+
+.main {
+  background-image: url(./img/game.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.game {
+  padding-top: 128px;
+  padding-bottom: 128px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px; 
+}
+
+.game__block {
+  position: relative;
+  grid-column: span 4;
+  height: 300px;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  border-radius: 16px;
+}
+
+.game__link {
+  position: absolute;
+  left: 32px;
+  bottom: 32px;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.game__img_1 {
+  background-image: url(./img/game1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.game__img_2 {
+  background-image: url(./img/game2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.game__img_3 {
+  background-image: url(./img/game3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
