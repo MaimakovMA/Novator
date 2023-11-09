@@ -1,5 +1,8 @@
 // Функция при нажатии на лайк
 
+import { renderList } from "./renderList.js";
+import { commentsArray } from "./script.js";
+
 export const likeListeners = () => {
     const likeElements = document.querySelectorAll(".like-button");
     for (let like of likeElements) {
@@ -20,6 +23,7 @@ export const likeListeners = () => {
  
   // Функция ответа на комментарий
   export const answerComment = () => {
+      const commentInputElement = document.querySelector(".add-form-text");
       const commentTextElement = document.querySelectorAll('.comment-text');
       const commentNameElement = document.querySelectorAll('.comment-name');
       for (const comment of commentTextElement) {

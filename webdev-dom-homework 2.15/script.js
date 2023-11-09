@@ -14,7 +14,7 @@ const loaderFormElement = document.querySelector('.loader_form');
 
 //  Создаем массив данных данных с комментариями
 
- let commentsArray = [];
+ export let commentsArray = [];
 
  // Запрос API
  loaderListElement.textContent = "Подождите, загружаю комментарии...";
