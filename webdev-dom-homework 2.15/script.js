@@ -1,8 +1,6 @@
 import { getTodos, postTodo } from "./api.js";
 import { renderList } from "./renderList.js";
 
-
-
 // "use strict";
 
 const formInputElement = document.querySelector(".add-form");
@@ -37,23 +35,20 @@ const loaderFormElement = document.querySelector('.loader_form');
      alert("Сервер сломался, попробуй позже");
      return;
    }
-
    console.warn(error);
  }) 
-
- };  
+};  
  
 
 // Создем рендер списка на основе массива 
 // Переместил в renderList.js
  
  // Enter на кнопку "Написать"
-   const enterListener = commentInputElement.addEventListener("keyup", () => {
-   if (event.keyCode === 13) {
-       buttonInputElement.click();
-     }
-   });
-
+  const enterListener = commentInputElement.addEventListener("keyup", () => {
+  if (event.keyCode === 13) {
+      buttonInputElement.click();
+    }
+  });
  
  // Функция после клика на кнопку "Написать"
 
@@ -63,12 +58,12 @@ const loaderFormElement = document.querySelector('.loader_form');
    if (nameInputElement.value.trim() === '' || commentInputElement.value.trim() === '') {
      formInputElement.classList.add("add__form_error");
      return;
-   };   
-
-   
+   };      
 
  //  Отправляем новый объект на сервер
+ formInputElement.classList.add("hidden");
  loaderFormElement.textContent = "Комментарий добавляется...";
+ 
  
  postTodo({ 
   name:nameInputElement.value, 
@@ -78,28 +73,26 @@ const loaderFormElement = document.querySelector('.loader_form');
  })
  .then (() => {
    loaderFormElement.textContent = ""; 
+   formInputElement.classList.remove("hidden");
    //Очищаем форму от последнего комментария 
    nameInputElement.value = '';
    commentInputElement.value = '';   
  })
  .catch((error) => {
+  formInputElement.classList.remove("hidden");
    loaderFormElement.textContent = "";
    if (error.message === "Имя должно содержать не менее 3 символов") {
      alert("Слишком короткое имя и комментарий должны быть не менее 3 символов");
      return;
    }
-
    if (error.message === "Ошибка на сервере") {
      alert("Сервер сломался, попробуй позже");
      return;
    }
-
-
+   
    console.warn(error);
  }) 
-
 });
-
 
  // Функция после клика на кнопку "Удалить"
 
@@ -110,7 +103,6 @@ const loaderFormElement = document.querySelector('.loader_form');
 
  fetchPromise();
 //  renderList({commentsArray});
-
 
  // Код писать здесь!
  console.log("It works!");
