@@ -134,7 +134,7 @@ postTodo({
   console.warn(error);
 }) 
 })
-};
+}
 
   
 

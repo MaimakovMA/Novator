@@ -1,6 +1,7 @@
 import { fetchPromise } from "./script.js";
 
 
+
 const host = "https://wedev-api.sky.pro/api/v2/mikhail-maimakov/comments";
 const userHost = "https://wedev-api.sky.pro/api/user/login";
 // const userHostReg =  "https://wedev-api.sky.pro/api/user";
