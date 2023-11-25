@@ -1,4 +1,4 @@
-import { getTodos, postTodo } from "./api.js";
+import { getTodos } from "./api.js";
 import { renderLogin } from "./loginPage.js";
 import { renderList } from "./renderList.js";
 
@@ -6,7 +6,7 @@ import { renderList } from "./renderList.js";
 
 
 const loaderListElement = document.querySelector('.loader_list');
-const loaderFormElement = document.querySelector('.loader_form');
+
 
 //  Создаем массив данных данных с комментариями
 
@@ -42,8 +42,8 @@ renderLogin({renderList});
 // Создем рендер списка на основе массива 
 // Переместил в renderList.js
 const commentInputElement = document.querySelector(".add-form-text");
-const formInputElement = document.querySelector(".add-form");
-const nameInputElement = document.querySelector(".add-form-name");
+// const formInputElement = document.querySelector(".add-form");
+// const nameInputElement = document.querySelector(".add-form-name");
 const buttonInputElement = document.querySelector(".add-form-button");
  // Enter на кнопку "Написать"
   export const enterListener = commentInputElement.addEventListener("keyup", () => {
@@ -53,64 +53,64 @@ const buttonInputElement = document.querySelector(".add-form-button");
   });
   
  
- // Функция после клика на кнопку "Написать"
+//  // Функция после клика на кнопку "Написать"
 
- buttonInputElement.addEventListener("click", () => {
-   //Проверка на пустые значения
-   formInputElement.classList.remove("add__form_error");
-   if (nameInputElement.value.trim() === '' || commentInputElement.value.trim() === '') {
-     formInputElement.classList.add("add__form_error");
-     return;
-   };    
+//  buttonInputElement.addEventListener("click", () => {
+//    //Проверка на пустые значения
+//    formInputElement.classList.remove("add__form_error");
+//    if (nameInputElement.value.trim() === '' || commentInputElement.value.trim() === '') {
+//      formInputElement.classList.add("add__form_error");
+//      return;
+//    };    
    
    
-  //  commentsArray.push({
-  //   name: nameInputElement.value
-  //   .replaceAll("&", "&amp;")
-  //   .replaceAll("<", "&lt;")
-  //   .replaceAll(">", "&gt;")
-  //   .replaceAll('"', "&quot;"),
-  //   text: commentInputElement.value
-  //   .replaceAll("&", "&amp;")
-  //   .replaceAll("<", "&lt;")
-  //   .replaceAll(">", "&gt;")
-  //   .replaceAll('"', "&quot;"),
-  //   likes: 0,
-  //  });
+//   //  commentsArray.push({
+//   //   name: nameInputElement.value
+//   //   .replaceAll("&", "&amp;")
+//   //   .replaceAll("<", "&lt;")
+//   //   .replaceAll(">", "&gt;")
+//   //   .replaceAll('"', "&quot;"),
+//   //   text: commentInputElement.value
+//   //   .replaceAll("&", "&amp;")
+//   //   .replaceAll("<", "&lt;")
+//   //   .replaceAll(">", "&gt;")
+//   //   .replaceAll('"', "&quot;"),
+//   //   likes: 0,
+//   //  });
 
 
- //  Отправляем новый объект на сервер
-//  formInputElement.classList.add("hidden");
- loaderFormElement.textContent = "Комментарий добавляется...";
+//  //  Отправляем новый объект на сервер
+// //  formInputElement.classList.add("hidden");
+//  loaderFormElement.textContent = "Комментарий добавляется...";
 
- postTodo({ 
-  name:nameInputElement.value, 
-  text:commentInputElement.value
- }).then(() => {
-   return fetchPromise()
- })
- .then (() => {
-   loaderFormElement.textContent = ""; 
-  //  formInputElement.classList.remove("hidden");
-   //Очищаем форму от последнего комментария 
-   nameInputElement.value = '';
-   commentInputElement.value = '';   
- })
- .catch((error) => {
-  // formInputElement.classList.remove("hidden");
-   loaderFormElement.textContent = "";
-   if (error.message === "Имя должно содержать не менее 3 символов") {
-     alert("Слишком короткое имя и комментарий должны быть не менее 3 символов");
-     return;
-   }
-   if (error.message === "Ошибка на сервере") {
-     alert("Сервер сломался, попробуй позже");
-     return;
-   }
+//  postTodo({ 
+//   name:nameInputElement.value, 
+//   text:commentInputElement.value
+//  }).then(() => {
+//    return fetchPromise()
+//  })
+//  .then (() => {
+//    loaderFormElement.textContent = ""; 
+//   //  formInputElement.classList.remove("hidden");
+//    //Очищаем форму от последнего комментария 
+//    nameInputElement.value = '';
+//    commentInputElement.value = '';   
+//  })
+//  .catch((error) => {
+//   // formInputElement.classList.remove("hidden");
+//    loaderFormElement.textContent = "";
+//    if (error.message === "Имя должно содержать не менее 3 символов") {
+//      alert("Слишком короткое имя и комментарий должны быть не менее 3 символов");
+//      return;
+//    }
+//    if (error.message === "Ошибка на сервере") {
+//      alert("Сервер сломался, попробуй позже");
+//      return;
+//    }
    
-   console.warn(error);
- }) 
-});
+//    console.warn(error);
+//  }) 
+// });
 
  // Функция после клика на кнопку "Удалить"
 

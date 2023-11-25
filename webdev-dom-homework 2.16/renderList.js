@@ -1,11 +1,12 @@
 // import { token } from "./api.js";
-import { token } from "./api.js";
+import { postTodo, token } from "./api.js";
 import { activeLike, dateFormat } from "./helper.js";
 import { answerComment, likeListeners } from "./listeners.js";
 import { renderLogin } from "./loginPage.js";
 
+
 // const commentsElement = document.querySelector(".comments");
-const formElement = document.querySelector(".form")
+// const formElement = document.querySelector(".form")
 
 export const renderList = ({ commentsArray }) => {
   const appElement = document.getElementById("app")
@@ -61,7 +62,7 @@ export const renderList = ({ commentsArray }) => {
   
   const formInputElement = document.querySelector(".add-form");
   
-  const commentInputElement = document.querySelector(".add-form-text");
+  // const commentInputElement = document.querySelector(".add-form-text");
   const buttonInputElement = document.querySelector(".add-form-button");
   const buttonLogin = document.querySelector(".authorization-button");
   const blockAuthorization = document.querySelector(".authorization")
@@ -70,9 +71,72 @@ export const renderList = ({ commentsArray }) => {
     if (!token)
     return
     const nameInputElement = document.querySelector(".add-form-name");
+    const loaderFormElement = document.querySelector('.loader_form');
+    const commentInputElement = document.querySelector(".add-form-text");
     nameInputElement.value = window.localStorage.getItem("userName");
     nameInputElement.disabled = true;
+
+    // Функция после клика на кнопку "Написать"
+
+ buttonInputElement.addEventListener("click", () => {
+  //Проверка на пустые значения
+  formInputElement.classList.remove("add__form_error");
+  if (nameInputElement.value.trim() === '' || commentInputElement.value.trim() === '') {
+    formInputElement.classList.add("add__form_error");
+    return;
+  };    
+  
+  
+  commentsArray.push({
+   name: nameInputElement.value
+   .replaceAll("&", "&amp;")
+   .replaceAll("<", "&lt;")
+   .replaceAll(">", "&gt;")
+   .replaceAll('"', "&quot;"),
+   text: commentInputElement.value
+   .replaceAll("&", "&amp;")
+   .replaceAll("<", "&lt;")
+   .replaceAll(">", "&gt;")
+   .replaceAll('"', "&quot;"),
+   likes: 0,
+  });
+
+
+//  Отправляем новый объект на сервер
+//  formInputElement.classList.add("hidden");
+loaderFormElement.textContent = "Комментарий добавляется...";
+
+postTodo({ 
+ name:nameInputElement.value, 
+ text:commentInputElement.value
+}).then(() => {
+  return fetchPromise()
+})
+.then (() => {
+  loaderFormElement.textContent = ""; 
+ //  formInputElement.classList.remove("hidden");
+  //Очищаем форму от последнего комментария 
+  nameInputElement.value = '';
+  commentInputElement.value = '';   
+})
+.catch((error) => {
+ // formInputElement.classList.remove("hidden");
+  loaderFormElement.textContent = "";
+  if (error.message === "Имя должно содержать не менее 3 символов") {
+    alert("Слишком короткое имя и комментарий должны быть не менее 3 символов");
+    return;
   }
+  if (error.message === "Ошибка на сервере") {
+    alert("Сервер сломался, попробуй позже");
+    return;
+  }
+  
+  console.warn(error);
+}) 
+})
+};
+
+  
 
   actionForm();
   // token ? blockAuthorization.classList.add('hidden') : formInputElement.classList.add('hidden');
