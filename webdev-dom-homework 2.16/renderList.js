@@ -3,6 +3,7 @@ import { postTodo, token } from "./api.js";
 import { activeLike, dateFormat } from "./helper.js";
 import { answerComment, likeListeners } from "./listeners.js";
 import { renderLogin } from "./loginPage.js";
+import { fetchPromise } from "./script.js";
 
 
 // const commentsElement = document.querySelector(".comments");
@@ -34,6 +35,7 @@ export const renderList = ({ commentsArray }) => {
     // commentsElement.innerHTML = commentsHtml;
         
     const formHtml = `
+    <div class="loader_form"></div>
     <div class="add-form">
       <input type="text" class="name-input add-form-name" placeholder="Введите ваше имя"/>
       <textarea type="textarea" class="add-form-text" placeholder="Введите ваш коментарий" rows="4" ></textarea>
