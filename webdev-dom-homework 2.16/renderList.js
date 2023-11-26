@@ -54,8 +54,7 @@ export const renderList = ({ commentsArray }) => {
     <ul class="comments">
        ${commentsHtml}
     </ul>
-    ${token ? formHtml : btnAuthHtml}
-    
+    ${token ? formHtml : btnAuthHtml}    
         
   `
 
@@ -155,6 +154,10 @@ postTodo({
    let lastList = document.querySelector('li:last-child');
    lastList.remove();
  }); 
+
+ const likesBlock = document.querySelector(".like-button")
+ token ? likeListeners() : likesBlock;
+
   // commentInputElement.addEventListener("keyup", enterListener)
  
 
