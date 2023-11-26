@@ -62,9 +62,8 @@ export const renderList = ({ commentsArray }) => {
 
   appElement.innerHTML = appHtml;
   
-  const formInputElement = document.querySelector(".add-form");
+  const formInputElement = document.querySelector(".add-form"); 
   
-  // const commentInputElement = document.querySelector(".add-form-text");
   const buttonInputElement = document.querySelector(".add-form-button");
   const buttonLogin = document.querySelector(".authorization-button");
   const blockAuthorization = document.querySelector(".authorization")
@@ -138,7 +137,7 @@ postTodo({
 })
 }
 
-  
+
 
   actionForm();
   // token ? blockAuthorization.classList.add('hidden') : formInputElement.classList.add('hidden');
@@ -150,6 +149,12 @@ postTodo({
     buttonLogin.addEventListener('click', () => renderLogin({ renderList }));
   }
   
+  // Функция после клика на кнопку "Удалить"
+
+ document.querySelector('.delete-comment-button').addEventListener("click", () => {
+   let lastList = document.querySelector('li:last-child');
+   lastList.remove();
+ }); 
   // commentInputElement.addEventListener("keyup", enterListener)
  
 
