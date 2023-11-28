@@ -76,6 +76,7 @@ export const renderList = ({ commentsArray }) => {
     nameInputElement.value = window.localStorage.getItem("userName");
     nameInputElement.disabled = true;
 
+    
     // Функция после клика на кнопку "Написать"
 
  buttonInputElement.addEventListener("click", () => {
@@ -84,9 +85,9 @@ export const renderList = ({ commentsArray }) => {
   if (nameInputElement.value.trim() === '' || commentInputElement.value.trim() === '') {
     formInputElement.classList.add("add__form_error");
     return;
-  };    
-  
-  
+  };      
+
+    
   commentsArray.push({
    name: nameInputElement.value
    .replaceAll("&", "&amp;")
@@ -134,36 +135,37 @@ postTodo({
   console.warn(error);
 }) 
 })
-}
 
+// Enter на кнопку "Написать"
+const enterListener = commentInputElement.addEventListener("keyup", () => {
+  if (event.keyCode === 13) {
+      buttonInputElement.click();
+    }
+  });
 
+// Функция после клика на кнопку "Удалить"
 
-  actionForm();
+document.querySelector('.delete-comment-button').addEventListener("click", () => {
+  let lastList = document.querySelector('li:last-child');
+  lastList.remove();
+}); 
+
+likeListeners();
+answerComment();
+
+};
+
+actionForm();
+
   // token ? blockAuthorization.classList.add('hidden') : formInputElement.classList.add('hidden');
   // console.log(nameInputElement)
   
 
-
   if (!token){
     buttonLogin.addEventListener('click', () => renderLogin({ renderList }));
-  }
-  
-  // Функция после клика на кнопку "Удалить"
-
- document.querySelector('.delete-comment-button').addEventListener("click", () => {
-   let lastList = document.querySelector('li:last-child');
-   lastList.remove();
- }); 
-
- const likesBlock = document.querySelector(".like-button")
- token ? likeListeners() : likesBlock;
-
-  // commentInputElement.addEventListener("keyup", enterListener)
- 
-
-
-    likeListeners();
-    answerComment();
   };
+    
+    
+};
   
   

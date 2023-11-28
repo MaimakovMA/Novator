@@ -6,7 +6,7 @@ import { renderList } from "./renderList.js";
 
 
 export const renderRegistration = () => {
-  const formElement = document.querySelector(".form");
+  const appElement = document.querySelector(".app");
   const loginHTMLRegistr = `<div class="container">  
     <div class="add-form">
     <h1> Регистрация </h1>
@@ -19,7 +19,7 @@ export const renderRegistration = () => {
       <a class="login_page-link" href="#">Войти</a>
     </div>
   </div>`
-  formElement.innerHTML = loginHTMLRegistr;
+  appElement.innerHTML = loginHTMLRegistr;
 
   const buttonRegistration = document.querySelector(".login_page-link")
   buttonRegistration.addEventListener("click", () => renderLogin({ renderList }));
@@ -36,14 +36,11 @@ export const renderRegistration = () => {
         login: loginElement.value,
         password:passwordInputElement.value,
     })
-        .then((response) => {
-          
+        .then((response) => {          
             setToken(response.user.token);
-            window.localStorage.setItem("userName", response.user.login);
-            return response.json()
+            window.localStorage.setItem("userName", response.user.name);            
         })
-        .then((response) => {
-          console.log(response)
+        .then(() => {          
             renderList({ commentsArray });
         })
         .catch((error) => {

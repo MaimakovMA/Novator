@@ -1,8 +1,6 @@
-// import { loginAuthorization, setToken } from "./api.js";
 import { commentsArray} from "./script.js";
-// import { renderRegistration } from "./registrationForm.js";
-
 import { loginAuthorization, setToken } from "./api.js";
+import { renderRegistration } from "./registrationForm.js";
 
 export const renderLogin = ({renderList}) => {
     const appElement = document.getElementById("app");
