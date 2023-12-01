@@ -6,7 +6,7 @@ import { renderList } from "./renderList.js";
 
 
 export const renderRegistration = () => {
-  const appElement = document.querySelector(".app");
+  const appElement = document.getElementById("app");
   const loginHTMLRegistr = `<div class="container">  
     <div class="add-form">
     <h1> Регистрация </h1>
@@ -36,7 +36,8 @@ export const renderRegistration = () => {
         login: loginElement.value,
         password:passwordInputElement.value,
     })
-        .then((response) => {          
+        .then((response) => {      
+          console.log(response)    
             setToken(response.user.token);
             window.localStorage.setItem("userName", response.user.name);            
         })

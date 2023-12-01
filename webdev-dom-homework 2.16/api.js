@@ -103,7 +103,7 @@ export function userRegistration({ login, name, password }) {
       throw new Error("Ошибка на сервере")
       break;
     default:
-      return fetchPromise();        
+      return response.json();        
    }
  })
 }
