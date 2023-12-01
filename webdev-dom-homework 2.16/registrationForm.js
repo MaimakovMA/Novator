@@ -36,8 +36,7 @@ export const renderRegistration = () => {
         login: loginElement.value,
         password:passwordInputElement.value,
     })
-        .then((response) => {      
-          console.log(response)    
+        .then((response) => {          
             setToken(response.user.token);
             window.localStorage.setItem("userName", response.user.name);            
         })

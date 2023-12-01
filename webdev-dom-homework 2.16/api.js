@@ -95,15 +95,31 @@ export function userRegistration({ login, name, password }) {
 })
 .then((response) => {
   // Проверяем статус 
-  switch (response.status) {
-    case 400:
-      throw new Error("Имя должно содержать не менее 3 символов")
-      break;
-    case 500:
-      throw new Error("Ошибка на сервере")
-      break;
-    default:
-      return response.json();        
-   }
+     
+    if (response.status === 400) {
+      alert("Ведите верныеданные")
+      return
+    }
+    if (response.status === 500) {
+      alert("Ошибка  на сервере")
+      return
+    }
+    return response.json();
  })
+}
+
+export function deleteTodo( {id} ) {
+  return fetch(`https://wedev-api.sky.pro/api/todos/${id}`, {
+  method: "DELETE",
+  // headers: {
+  //  Authorization: `Bearer ${token}`
+  // },
+  
+})
+
+// Обновленный массив
+.then((response) => {
+  // Проверяем статус 
+  
+})
 }

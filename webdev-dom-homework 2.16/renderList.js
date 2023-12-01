@@ -1,5 +1,5 @@
 // import { token } from "./api.js";
-import { postTodo, token } from "./api.js";
+import { deleteTodo, postTodo, token } from "./api.js";
 import { activeLike, dateFormat } from "./helper.js";
 import { answerComment, likeListeners } from "./listeners.js";
 import { renderLogin } from "./loginPage.js";
@@ -136,18 +136,22 @@ postTodo({
 }) 
 })
 
+
 // Enter на кнопку "Написать"
-const enterListener = commentInputElement.addEventListener("keyup", () => {
+commentInputElement.addEventListener("keyup", () => {
   if (event.keyCode === 13) {
       buttonInputElement.click();
     }
   });
 
+
+
+  
 // Функция после клика на кнопку "Удалить"
 
 document.querySelector('.delete-comment-button').addEventListener("click", () => {
-  let lastList = document.querySelector('li:last-child');
-  lastList.remove();
+  const id = commentsArray[commentsArray.length-1].id
+  deleteTodo({id}).then(() => fetchPromise())
 }); 
 
 likeListeners();
