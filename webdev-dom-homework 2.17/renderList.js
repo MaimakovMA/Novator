@@ -1,6 +1,6 @@
 // import { token } from "./api.js";
 import { deleteTodo, postTodo, token } from "./api.js";
-import { activeLike, dateFormat } from "./helper.js";
+import { activeLike } from "./helper.js";
 import { answerComment, likeListeners } from "./listeners.js";
 import { renderLogin } from "./loginPage.js";
 import { fetchPromise } from "./script.js";

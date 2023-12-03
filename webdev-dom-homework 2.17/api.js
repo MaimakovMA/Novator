@@ -119,6 +119,7 @@ export function deleteTodo( {id} ) {
 
 // Обновленный массив
 .then((response) => {
+  return (response)
   // Проверяем статус 
   
 })
