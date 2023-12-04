@@ -113,8 +113,7 @@ export function deleteTodo( {id} ) {
   method: "DELETE",
   headers: {
    Authorization: `Bearer ${token}`
-  },
-  
+  },  
 })
 
 // Обновленный массив
