@@ -1,4 +1,4 @@
-import { commentsArray} from "./script.js";
+import { commentsArray, fetchPromise} from "./script.js";
 import { loginAuthorization, setToken } from "./api.js";
 import { renderRegistration } from "./registrationForm.js";
 
@@ -41,5 +41,7 @@ export const renderLogin = ({renderList}) => {
         .catch((error) => {
             console.warn(error)
         })
+        fetchPromise();
   });
+  
 }

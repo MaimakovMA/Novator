@@ -109,17 +109,17 @@ export function userRegistration({ login, name, password }) {
 }
 
 export function deleteTodo( {id} ) {
-  return fetch(`https://wedev-api.sky.pro/api/todos/${id}`, {
+  return fetch(`${host}/${id}`, {
   method: "DELETE",
-  // headers: {
-  //  Authorization: `Bearer ${token}`
-  // },
+  headers: {
+   Authorization: `Bearer ${token}`
+  },
   
 })
 
 // Обновленный массив
 .then((response) => {
-  // Проверяем статус 
+  return response 
   
 })
 }

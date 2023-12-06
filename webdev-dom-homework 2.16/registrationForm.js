@@ -1,5 +1,5 @@
 import { setToken, userRegistration } from "./api.js";
-import { commentsArray} from "./script.js";
+import { commentsArray, fetchPromise} from "./script.js";
 import { renderLogin } from "./loginPage.js";
 import { renderList } from "./renderList.js";
 
@@ -46,6 +46,7 @@ export const renderRegistration = () => {
         .catch((error) => {
             console.warn(error)
         })
+        fetchPromise();
   })
-
+  
 }
