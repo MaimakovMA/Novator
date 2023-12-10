@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Проект "Комменты"</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="loader_list">
+
+      </div>
+      <ul class="comments">
+        <!-- Рендерится в JS -->
+      </ul>
+      <div class="loader_form">
+
+      </div>
+      <div class="add-form">
+        <input
+          type="text"
+          class="add-form-name"
+          placeholder="Введите ваше имя"
+        />
+        <textarea
+          type="textarea"
+          class="add-form-text"
+          placeholder="Введите ваш коментарий"
+          rows="4"
+        ></textarea>
+        <div class="add-form-row">
+          <button class="add-form-button">Написать</button>
+        </div>
+        <button class="delete-comment-button">Удалить последний комментарий</button>
+      </div>
+    </div> 
+    <script type="module" src="script.js"></script>   
+  </body>
+  
+  <style>
+    .add__form_error{
+      background-color: red;
+    }
+    .hidden {
+      visibility: hidden;
+    }
+  </style>
+  
+</html>
+
