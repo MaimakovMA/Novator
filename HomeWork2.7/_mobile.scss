@@ -1,0 +1,108 @@
+@media (max-width: 767px) {
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .header {
+        max-height: 735px;
+        align-items: center;
+        &__title {
+            padding-top: 239px;
+            font-size: 32px;
+            text-align: center; 
+        }
+        
+        &__text {
+            max-width: 481px;
+            margin-bottom: 33px;
+            font-size: 14px;
+            line-height: 22px;
+            text-align: center;  
+        }
+    
+    }
+
+     /* Game */ 
+
+    .game {
+       grid-template-columns: repeat(4, 1fr);
+    }
+
+
+     /* Seasons */
+
+    .seasons__block {
+        padding-bottom: 85px;
+        padding-top: 51px;
+        flex-wrap: wrap;
+    }
+
+    .seasons__block_left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .seasons__title {
+        text-align: center;
+        font-size: 32px;
+    }
+
+    .seasons__text {
+        text-align: center;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+
+
+    .seasons__button {
+        margin-bottom: 64px;
+    }
+
+    .seasons__img {
+        max-width: 344px;
+        min-height: 236px;
+    }
+ 
+
+    /* Remember */
+
+    .remember__block {
+        padding-bottom: 85px;
+        padding-top: 51px;
+        flex-wrap: wrap;
+    }
+
+    .remember__block_right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .remember__title {
+        text-align: center;
+        font-size: 32px;
+    }
+
+    .remember__text {
+        text-align: center;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .remember__button {
+        margin-bottom: 64px;
+    }
+
+    .remember__img {
+        max-width: 344px;
+        min-height: 236px;
+    }
+}
+
+
+
+
+
