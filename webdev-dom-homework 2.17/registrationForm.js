@@ -46,7 +46,6 @@ export const renderRegistration = () => {
         .catch((error) => {
             console.warn(error)
         })
-        fetchPromise();
   })
-  
+  fetchPromise();
 }

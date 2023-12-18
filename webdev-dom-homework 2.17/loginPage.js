@@ -41,7 +41,6 @@ export const renderLogin = ({renderList}) => {
         .catch((error) => {
             console.warn(error)
         })
-        fetchPromise();
   });
-  
+  fetchPromise();
 }

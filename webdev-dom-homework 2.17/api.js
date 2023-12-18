@@ -113,22 +113,14 @@ export function deleteTodo( {id} ) {
   method: "DELETE",
   headers: {
    Authorization: `Bearer ${token}`
-<<<<<<< HEAD
   },
   
-=======
-  },  
->>>>>>> 9ae1f179aff75acb20973ba8e547028974fb8ed9
 })
 
 // Обновленный массив
 .then((response) => {
-<<<<<<< HEAD
-  return response 
-=======
   return (response)
   // Проверяем статус 
->>>>>>> 9ae1f179aff75acb20973ba8e547028974fb8ed9
   
 })
-}
+};
