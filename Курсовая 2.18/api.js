@@ -1,9 +1,9 @@
 // Замени на свой, чтобы получить независимый от других набор данных.
 // "боевая" версия инстапро лежит в ключе prod
-const personalKeyMy = "Mikhail-Maymakov"
+const personalKeyMy = "Mikhail-Maymakov";
 const personalKey = "prod";
 const baseHost = "https://webdev-hw-api.vercel.app";
-const postsHost = `${baseHost}/api/v1/${personalKey}/instapro`;
+const postsHost = `${baseHost}/api/v1/${personalKeyMy}/instapro`;
 
 export function getPosts({ token }) {
   return fetch(postsHost, {
